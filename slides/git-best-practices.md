@@ -265,8 +265,23 @@ gitGraph
     commit id: "b2-a1069a3"
 ```
 
+-v-
 
+## Recommendation
 
+```console
+$ git config --global set pull.rebase true
+$ git config --global set rebase.autostash true
+```
+
+And/or define an alias in `.bashrc`/`.bash_profile`
+
+```bash
+alias gp='git pull --rebase --autostash'
+alias p='git pull --rebase && git push && git push --tags'
+```
+
+[More examples here](https://github.com/bertvv/dotfiles/blob/main/bash/dot-bashrc.d/aliases.sh)
 
 ---
 
