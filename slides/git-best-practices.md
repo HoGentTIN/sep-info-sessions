@@ -2,6 +2,14 @@
 title: 'Git best practices'
 ---
 
+<center>
+
+![](https://raw.githubusercontent.com/bertvv/git-workshop-nl/refs/heads/master/assets/demotivational-git.jpg)
+
+</center>
+
+---
+
 # Git best practices
 
 System Engineering Project 25-26
@@ -10,18 +18,29 @@ System Engineering Project 25-26
 
 -v-
 
+<center>
+
+![](https://imgs.xkcd.com/comics/git.png)
+
+Source: [XKCD #1597](https://xkcd.com/1597/)
+
+</center>
+
+-v-
+
 ## Contents
 
 - Config check
 - Commit messages
 - Merge vs rebase
-- Solving conflicts
+- Branches
+- Some other advice
 
 -v-
 
 ## Prerequisites
 
-- Git client installed
+- Git (CLI) client installed
 - Github account linked to HOGENT email address
 - Git basics: `clone`, `status`, `add`, `commit`, `push`/`pull`
 
@@ -30,7 +49,6 @@ System Engineering Project 25-26
 # Config check
 
 - Do this on *each* system where you use Git, once
-- Use Git Bash, preferrably
 - This is essential to prove your contribution!
 
 -v-
@@ -86,14 +104,13 @@ Copy the contents of your public key and [register in Github](https://github.com
 
 # Commit messages
 
-
 -v-
 
 ## You know what I'm talking about...
 
 ![](https://cbea.ms/content/images/size/w2000/2021/01/git_commit_2x.png)
 
-Obligatory XKCD reference ([#1296](https://m.xkcd.com/1296/))
+Source: [XKCD #1296](https://m.xkcd.com/1296/)
 
 -v-
 
@@ -232,7 +249,8 @@ gitGraph
 ## Disadvantages
 
 - Commit history becomes messy
-- Hard to keep track
+- Hard to reason about
+- Hard to fix mistakes
 
 -v-
 
@@ -285,6 +303,72 @@ alias p='git pull --rebase && git push && git push --tags'
 
 ---
 
-# Solving conflicts
+# Branches considered harmful
 
+-v-
+
+## Branching for "agile" development
+
+![](https://media.brntn.me/postie/aad6d468.png)
+
+-v- 
+
+How is this considered *agile*?
+
+Source: [peerdh.com](https://peerdh.com/blogs/programming-insights/git-branching-strategies-for-agile-development)
+
+-v-
+
+## A flaw in branch diagrams
+
+![](https://martinfowler.com/articles/branching-patterns/leroy-branch.jpg)
+
+Attributed to Jonny Leroy, source [martinfowler.com](https://martinfowler.com/articles/branching-patterns.html)
+
+-v-
+
+## Our recommendation
+
+- Don't create branches
+- Push to Github often (after rebase!)
+- Good task assignments can prevent conflicts
+
+---
+
+# Some other advice
+
+-v-
+
+## Undo?
+
+- Modify last commit: `git commit --amend`
+- Undo changes of last commit(s)
+    - `git revert HEAD`
+    - `git revert <commit>...`
+- Also, see <https://ohshitgit.com/>
+
+-v-
+
+## Don't overwrite public history!
+
+Never, **ever** do `git push --force`
+
+-v-
+
+## Take the time to configure (CLI) Git!
+
+- [Aliases](https://github.com/bertvv/dotfiles/blob/main/bash/dot-bashrc.d/aliases.sh)
+- [.gitconfig](https://github.com/bertvv/dotfiles/blob/main/git/dot-gitconfig)
+
+-v-
+
+## And finally, don't forget!
+
+![](https://repository-images.githubusercontent.com/43623432/e3756280-e50c-11e9-877f-24272543fd9c)
+
+<center>
+
+**Any questions? Topics you want us to cover?**
+
+</center>
 
